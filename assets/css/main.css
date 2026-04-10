@@ -7572,9 +7572,7 @@ html.lenis body {
   overflow-x: clip;
 }
 .rs-banner-one .rs-banner-shape {
-  position: absolute;
-  inset-inline-start: 0;
-  bottom: 0;
+  display: none;
 }
 @media only screen and (max-width: 991px) {
   .rs-banner-one .rs-banner-shape {
@@ -30378,4 +30376,60 @@ ol.applications-list li:not(:last-child) {
 .view-products-btn.nav-link:focus {
     background: #f35501 !important;
     color: #fff !important;
+}
+/* ---- Floating Action Buttons ---- */
+.rs-floating-buttons {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    z-index: 9999;
+}
+.rs-float-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: width 0.3s ease, padding-right 0.3s ease, opacity 0.3s ease;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+}
+.rs-float-btn i { flex-shrink: 0; }
+.rs-float-call    { background: #1a73e8; }
+.rs-float-call:hover    { background: #1558b0; color: #fff; }
+.rs-float-whatsapp { background: #25D366; }
+.rs-float-whatsapp:hover { background: #1da851; color: #fff; }
+.rs-float-email   { background: #e00000; }
+.rs-float-email:hover   { background: #b30000; color: #fff; }
+.rs-float-btn::before {
+    content: attr(title);
+    position: absolute;
+    right: 46px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: inherit;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 0 12px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    border-radius: 0;
+}
+.rs-float-btn:hover::before { opacity: 1; }
+@media (max-width: 575px) {
+    .rs-float-btn { width: 40px; height: 40px; font-size: 17px; }
 }
