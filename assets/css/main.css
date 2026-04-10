@@ -30442,3 +30442,46 @@ ol.applications-list li:not(:last-child) {
 @media (max-width: 575px) {
     .rs-float-btn { width: 40px; height: 40px; font-size: 17px; }
 }
+
+/* Search results dropdown */
+.rs-search-results {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    max-height: 320px;
+    overflow-y: auto;
+}
+.rs-search-results li a {
+    display: block;
+    padding: 10px 14px;
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.15s;
+}
+.rs-search-results li a:hover {
+    background: #f5f5f5;
+    color: var(--rs-primary, #e75b1f);
+}
+.rs-search-results li a strong {
+    color: var(--rs-primary, #e75b1f);
+    font-weight: 700;
+}
+.rs-search-no-result {
+    padding: 10px 14px;
+    color: #888;
+    font-size: 14px;
+}
+.rs-header-search {
+    position: relative;
+}

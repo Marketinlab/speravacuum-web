@@ -130,8 +130,57 @@ Sidebar Toggle
 
     //search
     $('.rs-header-search-icon').on('click', function (event) {
-        $('.rs-stickys-form').slideToggle('show');
+        event.stopPropagation();
+        var $wrapper = $(this).closest('.rs-header-search-wrapper');
+        var $form = $wrapper.find('.rs-stickys-form');
+        $form.slideToggle(300);
         $(this).toggleClass('icon-close');
+        if ($form.is(':visible')) {
+            setTimeout(function () { $wrapper.find('input[name="q"]').focus(); }, 310);
+        } else {
+            $wrapper.find('.rs-search-results').hide();
+        }
+    });
+
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('.rs-header-search-wrapper').length) {
+            $('.rs-stickys-form').slideUp(300);
+            $('.rs-header-search-icon').removeClass('icon-close');
+            $('.rs-search-results').hide();
+        }
+    });
+
+    $(document).on('input', 'input[name="q"]', function () {
+        var query = $(this).val().trim().toLowerCase();
+        var $wrapper = $(this).closest('.rs-header-search-wrapper');
+        var $results = $wrapper.find('.rs-search-results');
+        if (!$results.length) {
+            $results = $('<ul class="rs-search-results"></ul>');
+            $wrapper.find('.rs-header-search').append($results);
+        }
+        if (query.length < 2) { $results.hide(); return; }
+        var matches = (typeof SPERA_SEARCH_DATA !== 'undefined' ? SPERA_SEARCH_DATA : []).filter(function (item) {
+            return item.title.toLowerCase().includes(query) || item.keywords.toLowerCase().includes(query);
+        }).slice(0, 8);
+        if (!matches.length) {
+            $results.html('<li class="rs-search-no-result">No results found</li>').show();
+            return;
+        }
+        var html = matches.map(function (item) {
+            var highlighted = item.title.replace(new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi'), '<strong>$1</strong>');
+            return '<li><a href="' + item.url + '">' + highlighted + '</a></li>';
+        }).join('');
+        $results.html(html).show();
+    });
+
+    $(document).on('submit', '.rs-stickys-form', function (e) {
+        e.preventDefault();
+        var query = $(this).find('input[name="q"]').val().trim().toLowerCase();
+        if (!query) return;
+        var match = (typeof SPERA_SEARCH_DATA !== 'undefined' ? SPERA_SEARCH_DATA : []).find(function (item) {
+            return item.title.toLowerCase().includes(query) || item.keywords.toLowerCase().includes(query);
+        });
+        if (match) { window.location.href = match.url; }
     });
 
     // tooltip
