@@ -19340,7 +19340,6 @@ html.lenis body {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  height: 100%;
 }
 @media only screen and (max-width: 1600px) {
   .rs-services-three .rs-services-content {
@@ -19393,6 +19392,11 @@ html.lenis body {
 }
 .rs-services-three .rs-services-item .descrip {
   margin-bottom: 20px;
+  min-height: 55px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .rs-services-three .rs-services-item:hover .rs-services-thumb img {
   transform: scale(1.05);
@@ -19431,6 +19435,11 @@ html.lenis body {
 }
 .rs-services-three .rs-services-title {
   margin-bottom: 12px;
+  min-height: 68px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .rs-services-three .rs-services-title a:hover {
   color: var(--rs-theme-blue);
