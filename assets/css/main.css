@@ -22313,7 +22313,7 @@ html.lenis body {
 }
 .rs-contact-one .rs-contact-list-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 30px;
 }
 .rs-contact-one .rs-contact-list-item:hover .rs-contact-icon svg {
@@ -29389,7 +29389,7 @@ ol.applications-list li:not(:last-child) {
             position: relative;
             overflow: hidden;
             padding: 20px 0;
-            margin: 0 70px; /* Add margin to create space for buttons */
+            margin: 0 65px;
         }
 
         /* Track that holds all video cards */
@@ -29527,11 +29527,11 @@ ol.applications-list li:not(:last-child) {
         }
 
         .carousel-nav.prev {
-            left: -70px; /* Position completely outside */
+            left: 0;
         }
 
         .carousel-nav.next {
-            right: -70px; /* Position completely outside */
+            right: 0;
         }
 
         .carousel-nav.prev::before {
