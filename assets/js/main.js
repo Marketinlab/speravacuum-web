@@ -971,3 +971,42 @@ Sidebar Toggle
 
 })(jQuery);
 
+    /* ========================================
+       BRAND LOGO SWIPER
+       ======================================== */
+       // Partners logo carousel
+        var brandSwiper = new Swiper('.rs-partners-swiper', {
+            loop: true,
+            speed: 3000,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            freeMode: {
+                enabled: true,
+                momentum: false,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 16
+                },
+                480: {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 24
+                },
+                1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 28
+                },
+                1280: {
+                    slidesPerView: 6,
+                    spaceBetween: 30
+                }
+            }
+        });
