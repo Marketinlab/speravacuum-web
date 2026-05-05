@@ -17,7 +17,7 @@ var SPERA_SEARCH_DATA = [
     { title: "Online Drying Out System", url: "online-drying-system.html", keywords: "online drying out system transformer moisture removal during operation" },
     { title: "Casting Impregnation Plant", url: "casting-impregnation-plant.html", keywords: "casting impregnation plant resin varnish coating" },
     { title: "Epoxy Mixing Plant", url: "epoxy-mixing-plant.html", keywords: "epoxy mixing plant resin hardener mixing system" },
-    { title: "Hot Air Drying Oven", url: "hot-air-drying-oven.html", keywords: "hot air drying oven industrial heating oven curing" },
+    { title: "Heating Oven", url: "hot-air-drying-oven.html", keywords: "Heating Oven industrial heating oven curing" },
     { title: "Oil Impregnation Plant", url: "oil-impregnation-plant.html", keywords: "oil impregnation plant transformer insulation oil treatment" },
     { title: "Oil Capacitor Impregnation Plant", url: "oil-capacitor-impregnation-plant.html", keywords: "capacitor oil impregnation plant capacitor filling treatment" },
     // CLIENT REQUESTED TO REMOVE: Oil Flushing System — hidden instead of deleted as per client instruction

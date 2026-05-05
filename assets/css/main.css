@@ -2850,13 +2850,13 @@ textarea:focus {
   height: 40px;
   background: transparent;
   color: var(--rs-black);
-  border: 1px solid var(--rs-border-secondary);
+  border: 1.5px solid var(--rs-border-secondary);
   font-size: 16px;
-  -webkit-border-radius: 50%;
+  /* -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -o-border-radius: 50%;
   -ms-border-radius: 50%;
-  border-radius: 50%;
+  border-radius: 50%; */
 }
 .offcanvas-social ul li a:hover {
   background: var(--rs-theme-orange);
@@ -3064,7 +3064,7 @@ textarea:focus {
 .rs-section-title.elements-title {
   color: var(--rs-black) !important;
 }
-.rs-section-subtitle {
+.rs-section-subtitle { /*Edit margin-bottom to edit space in footer*/
   font-size: 16px;
   font-weight: 500;
   line-height: 25px;
@@ -3073,8 +3073,11 @@ textarea:focus {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 8px; 
   justify-content: center;
+}
+.rs-section-title.mb-30 {
+  margin-bottom: 13px;
 }
 .rs-section-subtitle img {
   width: 30px;
@@ -22347,7 +22350,7 @@ html.lenis body {
 .rs-contact-one .rs-contact-list-content span {
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   line-height: 1.2;
   display: inline-block;
   color: var(--rs-white);
@@ -30485,3 +30488,46 @@ ol.applications-list li:not(:last-child) {
 .rs-header-search {
     position: relative;
 }
+
+/* Partners slider */
+        .rs-partners-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        .rs-partners-section .rs-section-subtitle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .rs-partners-carousel-wrap {
+            margin-top: 40px;
+            overflow: hidden;
+        }
+        .rs-partners-swiper {
+            width: 100%;
+        }
+        .rs-partners-swiper .swiper-wrapper {
+            align-items: center;
+        }
+        .rs-partners-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border-radius: 10px;
+            height: 200px;
+            padding: 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+        }
+        .rs-partners-logo img {
+            width: 140px;
+            height: auto;
+            object-fit: contain;
+            filter: grayscale(30%);
+            transition: filter 0.3s ease, transform 0.5s ease;
+        }
+        .rs-partners-logo:hover img {
+            transform: scale(1.2);
+            filter: grayscale(0%);
+        }
