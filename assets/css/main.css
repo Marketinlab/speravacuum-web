@@ -3064,7 +3064,7 @@ textarea:focus {
 .rs-section-title.elements-title {
   color: var(--rs-black) !important;
 }
-.rs-section-subtitle {
+.rs-section-subtitle { /*Edit margin-bottom to edit space in footer*/
   font-size: 16px;
   font-weight: 500;
   line-height: 25px;
@@ -3073,8 +3073,11 @@ textarea:focus {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 8px; 
   justify-content: center;
+}
+.rs-section-title.mb-30 {
+  margin-bottom: 13px;
 }
 .rs-section-subtitle img {
   width: 30px;
@@ -22347,7 +22350,7 @@ html.lenis body {
 .rs-contact-one .rs-contact-list-content span {
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   line-height: 1.2;
   display: inline-block;
   color: var(--rs-white);
